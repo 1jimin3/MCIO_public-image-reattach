@@ -94,6 +94,7 @@ python utils/split_imgs/OULU_NPU_split.py     --src "$SRC_ROOT/OULU-NPU"     --d
 ## Step 2 — Crop faces with MTCNN every 5 frames
 
 ```bash
+SORTED=/tmp/MCIO/sorted        # output of Step 1
 CROPPED=/tmp/MCIO/cropped
 
 python face_crop.py --base-path "$SORTED" --dest-path "$CROPPED"
@@ -109,6 +110,7 @@ GPU is recommended; CPU works but is slow. The script enables `cudnn.determinist
 ## Step 3 — Reattach images to MCIO_public
 
 ```bash
+CROPPED=/tmp/MCIO/cropped      # output of Step 2
 OUT=/tmp/MCIO/reproduced
 
 # Process all 10 configs (5 cross-domain × {non-reasoning, reasoning})
@@ -132,6 +134,8 @@ ds = load_from_disk("/tmp/MCIO/reproduced/2frame_inter_demoMCIO_w_GPT_Caption")
 ## Step 4 — Verify
 
 ```bash
+OUT=/tmp/MCIO/reproduced       # output of Step 3
+
 python verify_reproduction.py \
     --reproduced "$OUT/2frame_inter_demoMCIO_w_GPT_Caption" \
     --reference "DescriptiveFAS/MCIO_public:2frame_inter_demoMCIO_w_GPT_Caption" \
