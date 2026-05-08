@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Pipeline outputs (NEVER commit images or reconstructed datasets)
+sorted/
+cropped/
+reproduced/
+out/
+data/
+*.arrow
+*.parquet
+
+# Reports / logs
+*.report.json
+verify*.json
+*.log
