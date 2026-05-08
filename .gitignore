@@ -16,9 +16,10 @@ env/
 .DS_Store
 Thumbs.db
 
-# Editors
+# Editors / agents
 .idea/
 .vscode/
+.claude/
 *.swp
 
 # Pipeline outputs (NEVER commit images or reconstructed datasets)
