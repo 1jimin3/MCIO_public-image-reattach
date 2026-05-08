@@ -42,7 +42,7 @@ You must obtain the raw videos directly from each benchmark's official source un
 ### MSU-MFSD
 Apply at <https://sites.google.com/site/huhanhomepage/dataset>.
 ```
-MSU-MFSD(video)/
+MSU-MFSD/
 ├── information/
 │   ├── train_sub_list.txt   # one client ID per line
 │   └── test_sub_list.txt
@@ -53,7 +53,7 @@ MSU-MFSD(video)/
 ### CASIA-FASD
 Available via the original authors at the Chinese Academy of Sciences.
 ```
-CASIA-FASD(video)/
+CASIA-FASD/
 └── {train,test}/
     └── {user_id}/
         ├── HR_1_*.avi   # live  (HR_1, 1, or 2 prefix)
@@ -64,7 +64,7 @@ CASIA-FASD(video)/
 ### IDIAP-REPLAY (Replay-Attack)
 Apply at <https://www.idiap.ch/en/scientific-research/data/replayattack>.
 ```
-IDIAP-REPLAY(video)/
+IDIAP-REPLAY/
 └── {train,test}/
     ├── real/*.{avi,mov,mp4}
     └── attack/
@@ -75,7 +75,7 @@ IDIAP-REPLAY(video)/
 ### OULU-NPU
 Apply at <https://sites.google.com/site/oulunpudatabase/>.
 ```
-OULU-NPU(video)/
+OULU-NPU/
 ├── Train_files/*_N.avi    # N=1: live, otherwise: spoof
 └── Test_files/*_N.avi
 ```
@@ -89,10 +89,10 @@ Run the split script for each benchmark you have. Output ends up under `<dst>/{t
 SRC_ROOT=/path/to/raw
 SORTED=/tmp/MCIO/sorted
 
-python utils/split_imgs/MSU_MFSD_split.py     --src "$SRC_ROOT/MSU-MFSD(video)"     --dst "$SORTED/MSU-MFSD(sorted)"
-python utils/split_imgs/CASIA_FASD_split.py   --src "$SRC_ROOT/CASIA-FASD(video)"   --dst "$SORTED/CASIA-FASD(sorted)"
-python utils/split_imgs/IDIAP_REPLAY_split.py --src "$SRC_ROOT/IDIAP-REPLAY(video)" --dst "$SORTED/IDIAP-REPLAY(sorted)"
-python utils/split_imgs/OULU_NPU_split.py     --src "$SRC_ROOT/OULU-NPU(video)"     --dst "$SORTED/OULU-NPU(sorted)"
+python utils/split_imgs/MSU_MFSD_split.py     --src "$SRC_ROOT/MSU-MFSD"     --dst "$SORTED/MSU-MFSD(sorted)"
+python utils/split_imgs/CASIA_FASD_split.py   --src "$SRC_ROOT/CASIA-FASD"   --dst "$SORTED/CASIA-FASD(sorted)"
+python utils/split_imgs/IDIAP_REPLAY_split.py --src "$SRC_ROOT/IDIAP-REPLAY" --dst "$SORTED/IDIAP-REPLAY(sorted)"
+python utils/split_imgs/OULU_NPU_split.py     --src "$SRC_ROOT/OULU-NPU"     --dst "$SORTED/OULU-NPU(sorted)"
 ```
 
 ## Step 2 — Crop faces with MTCNN every 5 frames
