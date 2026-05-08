@@ -40,7 +40,6 @@ pip install -r requirements.txt
 You must obtain the raw videos directly from each benchmark's official source under their license. Below is the layout each split script expects.
 
 ### MSU-MFSD
-Apply at <https://sites.google.com/site/huhanhomepage/dataset>.
 ```
 MSU-MFSD/
 ├── information/
@@ -51,7 +50,6 @@ MSU-MFSD/
 ```
 
 ### CASIA-FASD
-Available via the original authors at the Chinese Academy of Sciences.
 ```
 CASIA-FASD/
 └── {train,test}/
@@ -62,7 +60,6 @@ CASIA-FASD/
 ```
 
 ### IDIAP-REPLAY (Replay-Attack)
-Apply at <https://www.idiap.ch/en/scientific-research/data/replayattack>.
 ```
 IDIAP-REPLAY/
 └── {train,test}/
@@ -73,7 +70,6 @@ IDIAP-REPLAY/
 ```
 
 ### OULU-NPU
-Apply at <https://sites.google.com/site/oulunpudatabase/>.
 ```
 OULU-NPU/
 ├── Train_files/*_N.avi    # N=1: live, otherwise: spoof
